@@ -1,0 +1,53 @@
+<div class="home-header">
+  <div class="home-left">
+    <div class="header-title">
+      LRP
+    </div>
+    <div class="menu-options">
+      <a routerLink="/home" routerLinkActive="active">
+        <i class="glyphicon glyphicon-home"></i>
+        <span>Home</span>
+      </a>
+      <a routerLink="/generaicInfo" routerLinkActive="active">
+        <i class="glyphicon glyphicon-screenshot"></i>
+        <span>Generaic Info</span>
+      </a>
+      <a routerLink="/generalInfo" routerLinkActive="active">
+        <i class="glyphicon glyphicon-tasks"></i>
+        <span>General Info</span>
+      </a>
+      <a routerLink="/finance" routerLinkActive="active">
+        <i class="glyphicon glyphicon-piggy-bank"></i>
+        <span>Finance</span>
+      </a>
+      <a routerLink="/health" routerLinkActive="active">
+        <i class="glyphicon glyphicon-heart"></i>
+        <span>Health</span>
+      </a>
+      <a routerLink="/carrer" routerLinkActive="active">
+        <i class="glyphicon glyphicon-education"></i>
+        <span>Career & Learning</span>
+      </a>
+      <a routerLink="/reports" routerLinkActive="active">
+        <i class="glyphicon glyphicon-eye-open"></i>
+        <span>Reports</span>
+      </a>
+      <a routerLink="/apps" routerLinkActive="active">
+        <i class="glyphicon glyphicon-th"></i>
+        <span>My Apps</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="home-right">
+    <div class="user-details">
+      <img src="{{userService.user.profile || '/assets/img/profile-photo.jpg'}}">
+      {{userService.user.name}}
+    </div>
+    <div class="signout">
+      <a (click)="logout();">
+        <i class="glyphicon glyphicon-off"></i>
+      </a>
+    </div>
+  </div>
+</div>

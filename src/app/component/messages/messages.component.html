@@ -1,0 +1,9 @@
+<div class="container message">
+  <div [ngClass]="['alert', 'alert-dismissible' , 'alert-'+messageService.className]" role="alert" *ngIf="messageService.message">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="messageService.clearMessage()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <strong>Message!</strong>
+    <div> {{messageService.message}} </div>
+  </div>
+</div>

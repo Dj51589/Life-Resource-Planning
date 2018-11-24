@@ -1,0 +1,18 @@
+.login-box {
+  display: flex;
+
+  >div {
+    margin: 5px;
+  }
+
+  .login-input-conatiner,
+  .login-buttons-container {
+    input {
+      margin: 5px;
+    }
+  }
+
+  .login-input-conatiner {
+    display: flex;
+  }
+}

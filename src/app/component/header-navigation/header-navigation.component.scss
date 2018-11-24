@@ -1,0 +1,55 @@
+.home-header {
+  background-color: #26a69a;
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  .home-left {
+    display: flex;
+    .menu-options {
+      padding-left: 100px;
+      align-items: center;
+      justify-content: center;
+      a {
+        padding: 10px;
+        text-decoration: none;
+        color: white;
+        margin: 5px;
+        cursor: pointer;
+        &.active {
+          border-bottom: 1px solid;
+        }
+      }
+      span {
+        margin: 5px;
+        top: -1px;
+        position: relative;
+      }
+    }
+    .header-title {
+      font-size: 20px;
+    }
+  }
+  
+  .home-right {
+    display: flex;
+    .user-details {
+      img {
+        height: 30px;
+        width: 25px;
+        border-radius: 50%;
+      }
+    }
+    .signout {
+      margin-left: 50px;
+      cursor: pointer;
+    }
+  }
+}
+.home-menus {
+  background-color: #fff;
+  display: flex;
+  padding: 0px 20px;
+  align-items: center;
+}
