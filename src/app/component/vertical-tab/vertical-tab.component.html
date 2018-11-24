@@ -1,0 +1,12 @@
+<div class="vertical-tabs">
+  <div>
+    <ul class="nav nav-vertical h-100">
+<li *ngFor="let tab of tabList" [class.active]="tab === activeTab" (click)="tabClick(tab)">
+<a routerLink="{{tab.path}}" routerLinkActive="active">{{tab.name}}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="tab-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

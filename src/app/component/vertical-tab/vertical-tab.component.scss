@@ -1,0 +1,43 @@
+.vertical-tabs {
+  display: flex;
+
+  .tab-content {}
+}
+
+.nav-vertical {
+  padding: 15px;
+  padding-right: 0px;
+  border-right: 1px solid #ddd;
+  flex-direction: column;
+
+  li {
+    a {
+      border-radius: 4px 0 0 4px;
+      margin-right: 0;
+      padding: 10px;
+      display: block;
+      text-decoration: none;
+      text-transform: capitalize;
+    }
+
+    :hover,
+    :focus {
+      background-color: #eee;
+    }
+
+    &.active {
+      border-bottom-color: #ddd;
+      border-right-color: transparent;
+      padding-right: 0px;
+      margin-right: -1px;
+
+      a {
+        color: #555;
+        cursor: default;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-right-color: transparent;
+      }
+    }
+  }
+}

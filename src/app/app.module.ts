@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { GeneralInfoRoutingModule } from './generalInfo-routing.module';
@@ -21,6 +22,7 @@ import { CarrerComponent } from './component/carrer/carrer.component';
 import { ReportsComponent } from './component/reports/reports.component';
 import { AppsComponent } from './component/apps/apps.component';
 import { NotFoundComponent } from './component/not-found/not-found.component';
+import { VerticalTabComponent } from './component/vertical-tab/vertical-tab.component';
 
 @NgModule({
   declarations: [
@@ -39,13 +41,15 @@ import { NotFoundComponent } from './component/not-found/not-found.component';
     CarrerComponent,
     ReportsComponent,
     AppsComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    VerticalTabComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    GeneralInfoRoutingModule
+    GeneralInfoRoutingModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

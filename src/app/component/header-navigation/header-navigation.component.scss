@@ -1,5 +1,8 @@
 .home-header {
-  background-color: #26a69a;
+  // background: linear-gradient(to right, #3F51B5, #0dcbdc);
+  box-shadow: 0 1.5px 1px rgba(0, 0, 0, 0.12),
+  0 1px 3px rgba(0, 0, 0, 0.12);
+  background-color: #677bea;
   display: flex;
   padding: 10px;
   justify-content: space-between;
@@ -11,6 +14,8 @@
       padding-left: 100px;
       align-items: center;
       justify-content: center;
+      position: relative;
+      top: 3px;
       a {
         padding: 10px;
         text-decoration: none;
@@ -18,7 +23,7 @@
         margin: 5px;
         cursor: pointer;
         &.active {
-          border-bottom: 1px solid;
+          background-color: #7f7fd6;
         }
       }
       span {

@@ -1,12 +1,4 @@
-<p>
-<app-header-navigation *ngIf="userService.user.name"></app-header-navigation>
-<a routerLink="/generalInfo/address" routerLinkActive="active">Address</a>
-<a routerLink="/generalInfo/communications" routerLinkActive="active">Communications</a>
-<a routerLink="/generalInfo/personalIDs" routerLinkActive="active">Personal IDs</a>
-<a routerLink="/generalInfo/memberships" routerLinkActive="active">memberships</a>
-<a routerLink="/generalInfo/loanobjects" routerLinkActive="active">loan objects</a>
-<a routerLink="/generalInfo/travelinfo" routerLinkActive="active">travel info</a>
-<a routerLink="/generalInfo/documents" routerLinkActive="active">documents</a>
-<a routerLink="/generalInfo/leisureactivities" routerLinkActive="active">leisure activities</a>
-<router-outlet></router-outlet>
-</p>
+<div class="h-100">
+  <app-header-navigation *ngIf="userService.user.name"></app-header-navigation>
+  <app-vertical-tab [activeTab]="selectedTab" [tabList]="menuOptions" (onTabClick)="tabOptionClick($event)"></app-vertical-tab>
+</div>
