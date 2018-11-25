@@ -1,4 +1,4 @@
 <div class="h-100">
   <app-header-navigation *ngIf="userService.user.name"></app-header-navigation>
-  <app-vertical-tab [activeTab]="selectedTab" [tabList]="menuOptions" (onTabClick)="tabOptionClick($event)"></app-vertical-tab>
+  <app-vertical-tab [tabList]="menuOptions" (onTabClick)="tabOptionClick($event)"></app-vertical-tab>
 </div>

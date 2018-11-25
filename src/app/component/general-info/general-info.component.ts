@@ -43,10 +43,9 @@ export class GeneralInfoComponent implements OnInit {
     }
   ];
   ngOnInit() {
-    this.selectedTab = this.menuOptions[0];
+    this.menuOptions = this.menuOptions.reverse();
   }
 
   tabOptionClick(tabOption) {
-    this.selectedTab = tabOption;
   }
 }
