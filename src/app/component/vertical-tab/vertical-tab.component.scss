@@ -1,7 +1,10 @@
 .vertical-tabs {
   display: flex;
 
-  .tab-content {}
+  .tab-content {
+        width: 100%;
+        padding: 10px;
+  }
 }
 
 .nav-vertical {

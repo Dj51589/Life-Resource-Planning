@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { GeneralInfoComponent } from './component/general-info/general-info.component';
 import { HomeHeaderComponent } from './component/home/home-header/home-header.component';
 import { HomeBannerComponent } from './component/home/home-banner/home-banner.component';
+import { AddressComponent } from './component/address/address.component';
 
 const routes: Routes = [
   {
@@ -11,7 +12,7 @@ const routes: Routes = [
     children: [
       {
         path: 'address',
-        component: HomeHeaderComponent
+        component: AddressComponent
       },
       {
         path: 'communications',
@@ -22,7 +23,7 @@ const routes: Routes = [
         component: HomeHeaderComponent
       },
       {
-          path: 'memberships',
+        path: 'memberships',
         component: HomeBannerComponent
       },
       {
@@ -46,7 +47,7 @@ const routes: Routes = [
 ];
 
 @core.NgModule({
-    imports: [RouterModule.forChild(routes)],
-    exports: [RouterModule]
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
 })
-export class GeneralInfoRoutingModule { }
+export class GeneralInfoRoutingModule {}

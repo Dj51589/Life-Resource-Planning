@@ -1,0 +1,29 @@
+.main-container {
+    display: flex;
+    padding: 10px 25px;
+    flex-direction: column;
+    > div {
+        margin: 10px;
+    }
+    .add-btn-box {
+        justify-content: flex-end;
+        display: flex;
+    }
+    .input-form {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 10px;
+            .form-group {
+                margin: 5px;
+                flex: 0 0 23%;
+            }
+        }
+    }
+    .grid-container {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+}

@@ -1,8 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
 import { AppRoutingModule } from './app-routing.module';
 import { GeneralInfoRoutingModule } from './generalInfo-routing.module';
 
@@ -23,6 +22,16 @@ import { ReportsComponent } from './component/reports/reports.component';
 import { AppsComponent } from './component/apps/apps.component';
 import { NotFoundComponent } from './component/not-found/not-found.component';
 import { VerticalTabComponent } from './component/vertical-tab/vertical-tab.component';
+import { AddressComponent } from './component/address/address.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {
+  MatButtonModule,
+  MatCheckboxModule,
+  MatInputModule,
+  MatNativeDateModule
+} from '@angular/material';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 @NgModule({
   declarations: [
@@ -42,14 +51,23 @@ import { VerticalTabComponent } from './component/vertical-tab/vertical-tab.comp
     ReportsComponent,
     AppsComponent,
     NotFoundComponent,
-    VerticalTabComponent
+    VerticalTabComponent,
+    AddressComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     GeneralInfoRoutingModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

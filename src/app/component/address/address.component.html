@@ -1,0 +1,104 @@
+<div class="main-container">
+  <div class="add-btn-box">
+    <button class="btn btn-success" (click)="btnClick();">
+      + Add New Address
+    </button>
+  </div>
+  <div class="input-form">
+    <form>
+      <mat-form-field class="form-group">
+<input matInput [matDatepicker]="validFromDate" placeholder="Valid From" [formControl]="validFrom">
+<mat-datepicker-toggle matSuffix [for]="validFromDate"></mat-datepicker-toggle>
+<mat-datepicker #validFromDate></mat-datepicker>
+      </mat-form-field>
+{{validFrom}}
+      <mat-form-field class="form-group">
+        <input matInput [matDatepicker]="validTo" placeholder="Valid To">
+        <mat-datepicker-toggle matSuffix [for]="validTo"></mat-datepicker-toggle>
+        <mat-datepicker #validTo></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field class="form-group">
+        <input type="text" placeholder="Address Type" aria-label="Number" matInput [formControl]="myControl"
+          [matAutocomplete]="auto" name="address" [(ngModel)]="addressType">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+
+      <mat-form-field class="form-group">
+        <input matInput placeholder="House No." value="" name="house" [(ngModel)]="housenumber">
+      </mat-form-field>
+
+      <mat-form-field class="form-group">
+        <input matInput placeholder="Street" value="">
+      </mat-form-field>
+
+      <mat-form-field class="form-group">
+        <input matInput placeholder="Address Line 2" value="">
+      </mat-form-field>
+
+      <mat-form-field class="form-group">
+        <input matInput placeholder="City" value="">
+      </mat-form-field>
+
+      <mat-form-field class="form-group">
+        <input matInput placeholder="State" value="">
+      </mat-form-field>
+
+      <mat-form-field class="form-group">
+        <input matInput placeholder="Country" value="">
+      </mat-form-field>
+
+      <mat-form-field class="form-group">
+        <input matInput placeholder="Postal Code" value="">
+      </mat-form-field>
+
+      <mat-form-field class="form-group">
+        <input matInput placeholder="Address Proof Doc" value="">
+      </mat-form-field>
+
+      <mat-form-field class="form-group">
+        <input matInput placeholder="Upload Address Proof" value="">
+      </mat-form-field>
+    </form>
+  </div>
+  <div class="grid-container">
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Photo</th>
+        <th>Contatct Number</th>
+        <th>Address 1</th>
+        <th>Address 2</th>
+        <th>Address 3</th>
+      </tr>
+      <tr>
+        <td>Dheeraj</td>
+        <td>Photo</td>
+        <td>9810550702</td>
+        <td>Sofitel</td>
+        <td>Corniche Area</td>
+        <td>Gurgaon</td>
+      </tr>
+      <tr>
+        <td>Dheeraj</td>
+        <td>Photo</td>
+        <td>9810550702</td>
+        <td>Sofitel</td>
+        <td>Corniche Area</td>
+        <td>Gurgaon</td>
+      </tr>
+      <tr>
+        <td>Dheeraj</td>
+        <td>Photo</td>
+        <td>9810550702</td>
+        <td>Sofitel</td>
+        <td>Corniche Area</td>
+        <td>Gurgaon</td>
+      </tr>
+    </table>
+  </div>
+</div>
