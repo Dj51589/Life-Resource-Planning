@@ -28,10 +28,13 @@ import {
   MatButtonModule,
   MatCheckboxModule,
   MatInputModule,
-  MatNativeDateModule
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatSortModule
 } from '@angular/material';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -67,7 +70,10 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     MatDatepickerModule,
     MatNativeDateModule,
     MatAutocompleteModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]
