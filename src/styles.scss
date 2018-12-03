@@ -29,5 +29,48 @@ table {
   width: 100%;
 }
 
+.file-upload {
+  .afu-select-btn{
+    padding: 8px;
+    margin: 5px;
+    background-color: #8c8c8c;
+    border: none;
+    &:hover {
+      background-color: #8c8c8c;
+      border: none;
+      color: black;
+    }
+  }
+  .afu-upload-btn, .constraints-info, .sizeC {
+    display: none;
+  }
+  .afu-valid-file {
+    position: absolute;
+    margin: 5px;
+    .text-primary {
+      color: #757575 !important;
+    }
+    .textOverflow {
+      max-width: 290px;
+    }
+    a {
+      &.ng-star-inserted {
+        border-radius: 50%;
+        height: 25px;
+        width: 25px;
+        text-align: center;
+        background-color: #757575;
+        color: white;
+      }
+    }
+  }
+  .fa-times::after{
+    content: 'x';
+    font-style: normal;
+    cursor: pointer;
+  }
+}
+
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

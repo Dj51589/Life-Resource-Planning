@@ -5,98 +5,123 @@
     </button>
   </div>
   <div class="input-form">
-    <form>
+    <form [formGroup]="address_form">
       <mat-form-field class="form-group">
-        <input matInput [matDatepicker]="validFromDate" placeholder="Valid From" [formControl]="validFrom">
+        <input matInput [matDatepicker]="validFromDate" placeholder="Valid From" formControlName="validFrom">
         <mat-datepicker-toggle matSuffix [for]="validFromDate"></mat-datepicker-toggle>
         <mat-datepicker #validFromDate></mat-datepicker>
+        <mat-error *ngFor="let validation of address_validation_messages.validFrom">
+          <mat-error class="error-message" *ngIf="address_form.get('validFrom').hasError(validation.type) && (address_form.get('validFrom').dirty || address_form.get('validFrom').touched)">{{validation.message}}</mat-error>
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field class="form-group">
-        <input matInput [matDatepicker]="validTo" placeholder="Valid To">
-        <mat-datepicker-toggle matSuffix [for]="validTo"></mat-datepicker-toggle>
-        <mat-datepicker #validTo></mat-datepicker>
+        <input matInput [matDatepicker]="validToDate" placeholder="Valid To" formControlName="validTo">
+        <mat-datepicker-toggle matSuffix [for]="validToDate"></mat-datepicker-toggle>
+        <mat-datepicker #validToDate></mat-datepicker>
+        <mat-error *ngFor="let validation of address_validation_messages.validTo">
+          <mat-error class="error-message" *ngIf="address_form.get('validTo').hasError(validation.type) && 
+          (address_form.get('validTo').dirty || address_form.get('validTo').touched)">{{validation.message}}</mat-error>
+        </mat-error>
       </mat-form-field>
-
+      
       <mat-form-field class="form-group">
-        <input type="text" placeholder="Address Type" aria-label="Number" matInput [formControl]="myControl"
+        <input type="text" placeholder="Address Type" aria-label="Number" matInput formControlName="addressTypeControl"
           [matAutocomplete]="auto" name="address" [(ngModel)]="addressType">
         <mat-autocomplete #auto="matAutocomplete">
           <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
             {{option}}
           </mat-option>
         </mat-autocomplete>
+        <mat-error *ngFor="let validation of address_validation_messages.addressTypeControl">
+          <mat-error class="error-message" *ngIf="address_form.get('addressTypeControl').hasError(validation.type) && 
+          (address_form.get('addressTypeControl').dirty || address_form.get('addressTypeControl').touched)">{{validation.message}}</mat-error>
+        </mat-error>
+      </mat-form-field>
+      
+      <mat-form-field class="form-group">
+        <input matInput placeholder="House No." value="" name="house" formControlName="housenumber">
+        <mat-error *ngFor="let validation of address_validation_messages.housenumber">
+          <mat-error class="error-message" *ngIf="address_form.get('housenumber').hasError(validation.type) && 
+          (address_form.get('housenumber').dirty || address_form.get('housenumber').touched)">{{validation.message}}</mat-error>
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field class="form-group">
-        <input matInput placeholder="House No." value="" name="house" [(ngModel)]="housenumber">
+        <input matInput placeholder="Street" value="" formControlName="street">
       </mat-form-field>
 
       <mat-form-field class="form-group">
-        <input matInput placeholder="Street" value="">
+        <input matInput placeholder="Address Line 2" value="" formControlName="addressline2">
       </mat-form-field>
 
       <mat-form-field class="form-group">
-        <input matInput placeholder="Address Line 2" value="">
+        <input matInput placeholder="City" value="" formControlName="city">
       </mat-form-field>
 
       <mat-form-field class="form-group">
-        <input matInput placeholder="City" value="">
+        <input matInput placeholder="State" value="" formControlName="state">
       </mat-form-field>
 
       <mat-form-field class="form-group">
-        <input matInput placeholder="State" value="">
+        <input matInput placeholder="Country" value="" formControlName="country">
+        <mat-error *ngFor="let validation of address_validation_messages.country">
+          <mat-error class="error-message" *ngIf="address_form.get('country').hasError(validation.type) 
+          && (address_form.get('country').dirty || address_form.get('country').touched)">{{validation.message}}</mat-error>
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field class="form-group">
-        <input matInput placeholder="Country" value="">
+        <input matInput placeholder="Postal Code" value="" formControlName="postalCode">
+        <mat-error *ngFor="let validation of address_validation_messages.postalCode">
+          <mat-error class="error-message" *ngIf="address_form.get('postalCode').hasError(validation.type) && 
+          (address_form.get('postalCode').dirty || address_form.get('postalCode').touched)">{{validation.message}}</mat-error>
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field class="form-group">
-        <input matInput placeholder="Postal Code" value="">
+        <input matInput placeholder="Address Proof Doc" value="" formControlName="addressproofDocType">
       </mat-form-field>
 
-      <mat-form-field class="form-group">
-        <input matInput placeholder="Address Proof Doc" value="">
-      </mat-form-field>
-
-      <mat-form-field class="form-group">
-        <input matInput placeholder="Upload Address Proof" value="">
-      </mat-form-field>
+      <div class="form-group file-upload">
+        <angular-file-uploader [config]="afuConfig" [resetUpload]=resetVar
+        (ApiResponse)="DocUpload($event)">
+        </angular-file-uploader>
+      </div>
     </form>
   </div>
   <div class="grid-container">
     <div class="mat-elevation-z8">
       <table mat-table [dataSource]="dataSource" matSort>
-    
+
         <!-- Position Column -->
         <ng-container matColumnDef="position">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>
           <td mat-cell *matCellDef="let element"> {{element.position}} </td>
         </ng-container>
-    
+
         <!-- Name Column -->
         <ng-container matColumnDef="name">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
           <td mat-cell *matCellDef="let element"> {{element.name}} </td>
         </ng-container>
-    
+
         <!-- Weight Column -->
         <ng-container matColumnDef="weight">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Weight </th>
           <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
         </ng-container>
-    
+
         <!-- Symbol Column -->
         <ng-container matColumnDef="symbol">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Symbol </th>
           <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
         </ng-container>
-    
+
         <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
-    
+
       <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
     </div>
 

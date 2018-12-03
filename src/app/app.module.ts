@@ -32,9 +32,12 @@ import {
   MatPaginatorModule,
   MatSortModule
 } from '@angular/material';
+
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatTableModule } from '@angular/material/table';
+
+import { AngularFileUploaderModule } from 'angular-file-uploader';
 
 @NgModule({
   declarations: [
@@ -73,7 +76,8 @@ import { MatTableModule } from '@angular/material/table';
     ReactiveFormsModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    AngularFileUploaderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
