@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { GeneralInfoRoutingModule } from './generalInfo-routing.module';
 
@@ -38,6 +39,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatTableModule } from '@angular/material/table';
 
 import { AngularFileUploaderModule } from 'angular-file-uploader';
+import { MainLoaderComponent } from './component/main-loader/main-loader.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,8 @@ import { AngularFileUploaderModule } from 'angular-file-uploader';
     AppsComponent,
     NotFoundComponent,
     VerticalTabComponent,
-    AddressComponent
+    AddressComponent,
+    MainLoaderComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +80,8 @@ import { AngularFileUploaderModule } from 'angular-file-uploader';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    AngularFileUploaderModule
+    AngularFileUploaderModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

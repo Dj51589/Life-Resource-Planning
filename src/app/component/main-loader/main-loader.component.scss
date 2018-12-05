@@ -1,0 +1,15 @@
+.min-loader {
+  background-color: white;
+  position: absolute;
+  top: 0px;
+  height: 100vh;
+  width: 100%;
+  z-index: 99999;
+  opacity: 0.3;
+  text-align: center;
+
+  .loader-image {
+    margin-top: 25%;
+    height: 75px;
+  }
+}
