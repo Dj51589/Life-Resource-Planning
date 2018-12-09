@@ -16,3 +16,17 @@
     display: flex;
   }
 }
+
+.home-header {
+  background: linear-gradient(to right, #3F51B5, #0dcbdc);
+  box-shadow: 0 1.5px 1px rgba(0, 0, 0, 0.12),
+    0 1px 3px rgba(0, 0, 0, 0.12);
+  display: flex;
+  padding: 0px 20px;
+  justify-content: space-between;
+  align-items: center;
+
+  .header-title {
+    color: #fff;
+  }
+}

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserProfileService } from './../../userprofile.service';
+import { AuthService } from './../../auth.service';
 
 @Component({
   selector: 'app-header-navigation',
@@ -7,11 +7,11 @@ import { UserProfileService } from './../../userprofile.service';
   styleUrls: ['./header-navigation.component.scss']
 })
 export class HeaderNavigationComponent implements OnInit {
-  constructor(public userService: UserProfileService) {}
+  constructor(public authService: AuthService) {}
 
   ngOnInit() {}
 
   logout() {
-    this.userService.logout();
+    this.authService.logout();
   }
 }

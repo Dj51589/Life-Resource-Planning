@@ -4,7 +4,7 @@
       LRP
     </div>
     <div class="menu-options">
-      <a routerLink="/home" routerLinkActive="active">
+      <a routerLink="/">
         <i class="glyphicon glyphicon-home"></i>
         <span>Home</span>
       </a>
@@ -41,8 +41,8 @@
 
   <div class="home-right">
     <div class="user-details">
-      <img src="{{userService.user.profile || '/assets/img/profile-photo.jpg'}}">
-      {{userService.user.name}}
+<img src="{{authService.user.profile || '/assets/img/profile-photo.jpg'}}">
+{{authService.user.name}}
     </div>
     <div class="signout">
       <a (click)="logout();">

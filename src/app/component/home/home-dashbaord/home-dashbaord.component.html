@@ -1,4 +1,3 @@
-<app-header-navigation *ngIf="userService.user.name"></app-header-navigation>
-<app-home-header *ngIf="!userService.user.name"></app-home-header>
-<app-home-banner></app-home-banner>
+<app-header-navigation *ngIf="authService.user.name"></app-header-navigation>
+<router-outlet></router-outlet>
 

@@ -3,8 +3,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
+
 import { AppRoutingModule } from './app-routing.module';
-import { GeneralInfoRoutingModule } from './generalInfo-routing.module';
+import { HomeRoutingModule } from './component/home/home-routing.module';
 
 import { AppComponent } from './app.component';
 import { HomeBannerComponent } from './component/home/home-banner/home-banner.component';
@@ -65,9 +66,7 @@ import { MainLoaderComponent } from './component/main-loader/main-loader.compone
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
-    GeneralInfoRoutingModule,
     NgbModule,
     BrowserAnimationsModule,
     MatButtonModule,
@@ -81,7 +80,9 @@ import { MainLoaderComponent } from './component/main-loader/main-loader.compone
     MatPaginatorModule,
     MatSortModule,
     AngularFileUploaderModule,
-    HttpClientModule
+    HttpClientModule,
+    HomeRoutingModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

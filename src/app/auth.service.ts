@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { User } from './classes/user';
 import { Router } from '@angular/router';
-
+import * as _ from 'lodash';
 @Injectable({
   providedIn: 'root'
 })
-export class UserProfileService {
+export class AuthService {
   user: User = {
-    name: ''
+    name: null
   };
+  redirectUrl;
   constructor(private router: Router) {
     this.getUserDetail();
   }
@@ -25,6 +26,11 @@ export class UserProfileService {
     }
   }
 
+  isLoggedIn() {
+    this.getUserDetail();
+    return !_.isNull(_.get(this.user, 'name', null));
+  }
+
   resetUserDetail() {
     this.user = {
       name: null
@@ -33,9 +39,9 @@ export class UserProfileService {
 
   logout() {
     this.user = {
-      name: ''
+      name: null
     };
     localStorage.clear();
-    this.router.navigateByUrl('/');
+    this.router.navigateByUrl('/login');
   }
 }

@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { UserProfileService } from './../../userprofile.service';
+import { AuthService } from './../../auth.service';
 @Component({
   selector: 'app-general-info',
   templateUrl: './general-info.component.html',
   styleUrls: ['./general-info.component.scss']
 })
 export class GeneralInfoComponent implements OnInit {
-  constructor(public userService: UserProfileService) {}
+  constructor(public authService: AuthService) {}
   selectedTab;
   menuOptions = [
     {
@@ -46,6 +46,5 @@ export class GeneralInfoComponent implements OnInit {
     this.menuOptions = this.menuOptions.reverse();
   }
 
-  tabOptionClick(tabOption) {
-  }
+  tabOptionClick(tabOption) {}
 }

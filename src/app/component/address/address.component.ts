@@ -8,6 +8,7 @@ import {
 } from '@angular/forms';
 import { map, startWith } from 'rxjs/operators';
 import { MatPaginator, MatTableDataSource, MatSort } from '@angular/material';
+import { MainLoaderService } from './../../main-loader.service';
 
 export interface PeriodicElement {
   name: string;
@@ -111,7 +112,10 @@ export class AddressComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private loaderService: MainLoaderService
+  ) {}
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -136,7 +140,8 @@ export class AddressComponent implements OnInit {
   DocUpload() {}
 
   btnClick() {
-    debugger;
+    this.loaderService.showLoader();
+    this.loaderService.hideLoader();
     // this.validFrom.value;
     // this.validTo.value;
     // this.addressType;

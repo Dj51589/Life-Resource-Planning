@@ -1,10 +1,16 @@
-<div class="login-box">
-  <div class="login-input-conatiner">
-<input type="text" placeholder="Username" class="form-control" [(ngModel)]="user.name">
-    <input type="password" placeholder="Password" class="form-control" [(ngModel)]="password">
+<div class="home-header">
+  <div class="header-title">
+    <h3>Life Resource Planning</h3>
   </div>
-  <div class="login-buttons-container">
-    <input type="button" value="Login" class="btn btn-primary" (click)="onLogin()">
-    <input type="button" value="Sign up" class="btn" (click)="onSignUp()">
+  <div class="login-box">
+    <div class="login-input-conatiner">
+      <input type="text" placeholder="Username" class="form-control" [(ngModel)]="user.name">
+      <input type="password" placeholder="Password" class="form-control" [(ngModel)]="password">
+    </div>
+    <div class="login-buttons-container">
+      <input type="button" value="Login" class="btn btn-primary" (click)="onLogin()">
+      <input type="button" value="Sign up" class="btn" (click)="onSignUp()">
+    </div>
   </div>
 </div>
+<app-home-banner></app-home-banner>

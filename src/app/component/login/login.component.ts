@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { User } from '../../classes/user';
 import * as _ from 'lodash';
 import { MessageService } from './../../message.service';
-import { UserProfileService } from './../../userprofile.service';
+import { AuthService } from './../../auth.service';
 import { RemoteService } from './../../remote.service';
 import { MainLoaderService } from './../../main-loader.service';
 import { from } from 'rxjs';
@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private router: Router,
     private messageService: MessageService,
-    private userService: UserProfileService,
+    private authService: AuthService,
     private remoteService: RemoteService,
     private loaderService: MainLoaderService
   ) {}
@@ -32,18 +32,22 @@ export class LoginComponent implements OnInit {
     } else {
       this.loaderService.showLoader();
       const url = AppConfig.local + URL.addressType;
-      this.remoteService.getCall(url).subscribe(
-        data => {
-          this.loaderService.hideLoader();
-          this.userService.setUserDetail(data);
-          this.messageService.addMessage('Login Successfuly.', 'success');
-          this.router.navigateByUrl('/generalInfo');
-        },
-        error => {
-          this.loaderService.hideLoader();
-          this.messageService.addMessage('Login Error Occured.', 'warning');
-        }
-      );
+      this.loaderService.hideLoader();
+      this.authService.setUserDetail(this.user);
+      this.messageService.addMessage('Login Successfuly.', 'success');
+      this.router.navigate(['/']);
+      // this.remoteService.getCall(url).subscribe(
+      //   data => {
+      //     this.loaderService.hideLoader();
+      //     this.userService.setUserDetail(data);
+      //     this.messageService.addMessage('Login Successfuly.', 'success');
+      //     this.router.navigateByUrl('/generalInfo');
+      //   },
+      //   error => {
+      //     this.loaderService.hideLoader();
+      //     this.messageService.addMessage('Login Error Occured.', 'warning');
+      //   }
+      // );
     }
   }
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserProfileService } from './../../../userprofile.service';
+import { AuthService } from './../../../auth.service';
 
 @Component({
   selector: 'app-home-dashbaord',
@@ -7,7 +7,7 @@ import { UserProfileService } from './../../../userprofile.service';
   styleUrls: ['./home-dashbaord.component.scss']
 })
 export class HomeDashbaordComponent implements OnInit {
-  constructor(public userService: UserProfileService) {}
+  constructor(public authService: AuthService) {}
 
   ngOnInit() {}
 }
