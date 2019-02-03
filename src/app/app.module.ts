@@ -41,6 +41,7 @@ import { MatTableModule } from '@angular/material/table';
 
 import { AngularFileUploaderModule } from 'angular-file-uploader';
 import { MainLoaderComponent } from './component/main-loader/main-loader.component';
+import { AddressDetailComponent } from './component/address/address-detail/address-detail.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { MainLoaderComponent } from './component/main-loader/main-loader.compone
     NotFoundComponent,
     VerticalTabComponent,
     AddressComponent,
-    MainLoaderComponent
+    MainLoaderComponent,
+    AddressDetailComponent
   ],
   imports: [
     BrowserModule,

@@ -7,7 +7,7 @@ import { AuthService } from './../../auth.service';
 import { RemoteService } from './../../remote.service';
 import { MainLoaderService } from './../../main-loader.service';
 import { from } from 'rxjs';
-import { URL, AppConfig } from './../../classes/constants';
+import { URL } from './../../classes/constants';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -31,15 +31,16 @@ export class LoginComponent implements OnInit {
       this.messageService.addMessage('Enter Password', 'danger');
     } else {
       this.loaderService.showLoader();
-      const url = AppConfig.local + URL.addressType;
+      const url = URL.addressType;
       this.loaderService.hideLoader();
       this.authService.setUserDetail(this.user);
       this.messageService.addMessage('Login Successfuly.', 'success');
       this.router.navigate(['/']);
+
       // this.remoteService.getCall(url).subscribe(
       //   data => {
       //     this.loaderService.hideLoader();
-      //     this.userService.setUserDetail(data);
+      //     this.authService.setUserDetail(data);
       //     this.messageService.addMessage('Login Successfuly.', 'success');
       //     this.router.navigateByUrl('/generalInfo');
       //   },

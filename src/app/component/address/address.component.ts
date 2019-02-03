@@ -10,34 +10,191 @@ import { map, startWith } from 'rxjs/operators';
 import { MatPaginator, MatTableDataSource, MatSort } from '@angular/material';
 import { MainLoaderService } from './../../main-loader.service';
 
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
-  { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
-  { position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li' },
-  { position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be' },
-  { position: 5, name: 'Boron', weight: 10.811, symbol: 'B' },
-  { position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C' },
-  { position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N' },
-  { position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O' },
-  { position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F' },
-  { position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne' },
-  { position: 11, name: 'Sodium', weight: 22.9897, symbol: 'Na' },
-  { position: 12, name: 'Magnesium', weight: 24.305, symbol: 'Mg' },
-  { position: 13, name: 'Aluminum', weight: 26.9815, symbol: 'Al' },
-  { position: 14, name: 'Silicon', weight: 28.0855, symbol: 'Si' },
-  { position: 15, name: 'Phosphorus', weight: 30.9738, symbol: 'P' },
-  { position: 16, name: 'Sulfur', weight: 32.065, symbol: 'S' },
-  { position: 17, name: 'Chlorine', weight: 35.453, symbol: 'Cl' },
-  { position: 18, name: 'Argon', weight: 39.948, symbol: 'Ar' },
-  { position: 19, name: 'Potassium', weight: 39.0983, symbol: 'K' },
-  { position: 20, name: 'Calcium', weight: 40.078, symbol: 'Ca' }
+const ELEMENT_DATA = [
+  {
+    name: 'Bharagav',
+    image:
+      'http://atozprofile.com/public/user_upload/profile/1843663324Self.png',
+    addresses: [
+      {
+        type: 'Personal Address',
+        street: '5-1-4/123, D R COLONY',
+        state: 'Andhra Pradesh, India'
+      },
+      {
+        type: 'Office Address',
+        street: '12213, Banglore',
+        state: 'India'
+      },
+      {
+        type: 'Temporary Address',
+        street: 'b-101, sector 5',
+        state: 'Noida'
+      },
+      {
+        type: 'Personal Address',
+        street: '5-1-4/123, D R COLONY',
+        state: 'Andhra Pradesh, India'
+      },
+      {
+        type: 'Office Address',
+        street: '12213, Banglore',
+        state: 'India'
+      },
+      {
+        type: 'Temporary Address',
+        street: 'b-101, sector 5',
+        state: 'Noida'
+      }
+    ]
+  },
+  {
+    name: 'Junje Gowd  Konappapalyam Chinna',
+    image:
+      'http://atozprofile.com/public/generic_upload/family/1559144679Lokesh.png',
+    addresses: [
+      {
+        type: 'Personal Address',
+        street: '5-1-4/123, D R COLONY',
+        state: 'Andhra Pradesh, India'
+      },
+      {
+        type: 'Office Address',
+        street: '12213, Banglore',
+        state: 'India'
+      },
+      {
+        type: 'Temporary Address',
+        street: 'b-101, sector 5',
+        state: 'Noida'
+      },
+      {
+        type: 'Personal Address',
+        street: '5-1-4/123, D R COLONY',
+        state: 'Andhra Pradesh, India'
+      },
+      {
+        type: 'Office Address',
+        street: '12213, Banglore',
+        state: 'India'
+      },
+      {
+        type: 'Temporary Address',
+        street: 'b-101, sector 5',
+        state: 'Noida'
+      }
+    ]
+  },
+  {
+    name: 'Pavan Kumar  Konappapalyam',
+    image:
+      'http://atozprofile.com/public/generic_upload/family/1690440524Pavan.png',
+    addresses: [
+      {
+        type: 'Personal Address',
+        street: '5-1-4/123, D R COLONY',
+        state: 'Andhra Pradesh, India'
+      },
+      {
+        type: 'Office Address',
+        street: '12213, Banglore',
+        state: 'India'
+      },
+      {
+        type: 'Temporary Address',
+        street: 'b-101, sector 5',
+        state: 'Noida'
+      }
+    ]
+  },
+  {
+    name: 'Chitra  Ranganath',
+    image:
+      'http://atozprofile.com/public/generic_upload/family/1682696996Chitra.png',
+    addresses: [
+      {
+        type: 'Personal Address',
+        street: '5-1-4/123, D R COLONY',
+        state: 'Andhra Pradesh, India'
+      },
+      {
+        type: 'Office Address',
+        street: '12213, Banglore',
+        state: 'India'
+      },
+      {
+        type: 'Temporary Address',
+        street: 'b-101, sector 5',
+        state: 'Noida'
+      }
+    ]
+  },
+  {
+    name: 'Hemalatha  V.N',
+    image:
+      'http://atozprofile.com/public/generic_upload/family/1936566325Hema.png',
+    addresses: [
+      {
+        type: 'Personal Address',
+        street: '5-1-4/123, D R COLONY',
+        state: 'Andhra Pradesh, India'
+      },
+      {
+        type: 'Office Address',
+        street: '12213, Banglore',
+        state: 'India'
+      },
+      {
+        type: 'Temporary Address',
+        street: 'b-101, sector 5',
+        state: 'Noida'
+      }
+    ]
+  },
+  {
+    name: 'Swetha  Lokesh',
+    image:
+      'http://atozprofile.com/public/generic_upload/family/313985000Swetha.png',
+    addresses: [
+      {
+        type: 'Personal Address',
+        street: '5-1-4/123, D R COLONY',
+        state: 'Andhra Pradesh, India'
+      },
+      {
+        type: 'Office Address',
+        street: '12213, Banglore',
+        state: 'India'
+      },
+      {
+        type: 'Temporary Address',
+        street: 'b-101, sector 5',
+        state: 'Noida'
+      }
+    ]
+  },
+  {
+    name: 'Aarushi  Alappagari',
+    image:
+      'http://atozprofile.com/public/generic_upload/family/375460906Aarushi.png',
+    addresses: [
+      {
+        type: 'Personal Address',
+        street: '5-1-4/123, D R COLONY',
+        state: 'Andhra Pradesh, India'
+      },
+      {
+        type: 'Office Address',
+        street: '12213, Banglore',
+        state: 'India'
+      },
+      {
+        type: 'Temporary Address',
+        street: 'b-101, sector 5',
+        state: 'Noida'
+      }
+    ]
+  }
 ];
 
 @Component({
@@ -58,7 +215,7 @@ export class AddressComponent implements OnInit {
         'Content-Type': 'text/plain;charset=UTF-8'
       }
     },
-    // theme: "dragNDrop",
+    // theme: 'dragNDrop',
     hideProgressBar: false,
     hideResetBtn: true,
     hideSelectBtn: false
@@ -109,13 +266,12 @@ export class AddressComponent implements OnInit {
   options: string[] = ['Home Address', 'Office Address', 'Native Town Address'];
   filteredOptions: Observable<string[]>;
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+  dataSource = ELEMENT_DATA;
 
   constructor(
     private fb: FormBuilder,
     private loaderService: MainLoaderService
-  ) {}
+  ) { }
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -125,8 +281,6 @@ export class AddressComponent implements OnInit {
       startWith(''),
       map(value => this._filter(value))
     );
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
   }
 
   private _filter(value: string): string[] {
@@ -137,7 +291,7 @@ export class AddressComponent implements OnInit {
     );
   }
 
-  DocUpload() {}
+  DocUpload() { }
 
   btnClick() {
     this.loaderService.showLoader();
@@ -147,5 +301,10 @@ export class AddressComponent implements OnInit {
     // this.addressType;
     // this.addressTypeControl.value;
     // this.housenumber;
+  }
+
+  showHideIcon(obj, status) {
+    debugger;
+    obj.mouseEntered = status;
   }
 }

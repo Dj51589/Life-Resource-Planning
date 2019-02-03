@@ -15,84 +15,89 @@ import { DashbaordComponent } from '././../../component/dashbaord/dashbaord.comp
 import { HomeHeaderComponent } from '../home/home-header/home-header.component';
 import { HomeBannerComponent } from '../home/home-banner/home-banner.component';
 import { AddressComponent } from '../address/address.component';
+import { AddressDetailComponent } from "../address/address-detail/address-detail.component";
 
 const routes: Routes = [
   {
-    path: '',
+    path: "",
     component: HomeDashbaordComponent,
     canActivate: [AuthGuard],
     children: [
       {
-        path: '',
+        path: "",
         component: DashbaordComponent,
         canActivateChild: [AuthGuard]
       },
       {
-        path: 'generaicInfo',
+        path: "generaicInfo",
         component: GenericInfoComponent,
         canActivateChild: [AuthGuard]
       },
       {
-        path: 'generalInfo',
+        path: "addressDetails/:id",
+        component: AddressDetailComponent
+      },
+      {
+        path: "generalInfo",
         component: GeneralInfoComponent,
         canActivateChild: [AuthGuard],
         children: [
           {
-            path: 'address',
+            path: "address",
             component: AddressComponent
           },
           {
-            path: 'communications',
+            path: "communications",
             component: HomeBannerComponent
           },
           {
-            path: 'personalIDs',
+            path: "personalIDs",
             component: HomeHeaderComponent
           },
           {
-            path: 'memberships',
+            path: "memberships",
             component: HomeBannerComponent
           },
           {
-            path: 'loanobjects',
+            path: "loanobjects",
             component: HomeHeaderComponent
           },
           {
-            path: 'travelinfo',
+            path: "travelinfo",
             component: HomeBannerComponent
           },
           {
-            path: 'documents',
+            path: "documents",
             component: HomeHeaderComponent
           },
           {
-            path: 'leisureactivities',
+            path: "leisureactivities",
             component: HomeBannerComponent
           }
         ]
       },
       {
-        path: 'finance',
+        path: "finance",
         component: FinanceComponent,
         canActivateChild: [AuthGuard]
       },
       {
-        path: 'health',
+        path: "health",
         component: HealthComponent,
         canActivateChild: [AuthGuard]
       },
       {
-        path: 'carrer',
+        path: "carrer",
         component: CarrerComponent,
         canActivateChild: [AuthGuard]
       },
       {
-        path: 'reports',
+        path: "reports",
         component: ReportsComponent,
         canActivateChild: [AuthGuard]
       },
       {
-        path: 'apps',
+        path: "apps",
         component: AppsComponent,
         canActivateChild: [AuthGuard]
       }
@@ -104,4 +109,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class HomeRoutingModule {}
+export class HomeRoutingModule { }
