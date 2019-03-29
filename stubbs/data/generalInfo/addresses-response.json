@@ -1,0 +1,99 @@
+[{
+    "name": "Bharagav",
+    "image": "http://atozprofile.com/public/user_upload/profile/1843663324Self.png",
+    "addresses": [{
+      "type": "Personal Address",
+      "street": "5-1-4/123, D R COLONY",
+      "state": "Andhra Pradesh, India"
+    }, {
+      "type": "Office Address",
+      "street": "5-1-4/123, D R COLONY",
+      "state": "Andhra Pradesh, India"
+    }, {
+      "type": "Home Address",
+      "street": "5-1-4/123, D R COLONY",
+      "state": "Andhra Pradesh, India"
+    }]
+  }, {
+    "name": "Aarushi",
+    "image": "http://atozprofile.com/public/generic_upload/family/375460906Aarushi.png",
+    "addresses": [{
+      "type": "Personal Address",
+      "street": "5-1-4/123, D R COLONY",
+      "state": "Andhra Pradesh, India"
+    }, {
+      "type": "Office Address",
+      "street": "5-1-4/123, D R COLONY",
+      "state": "Andhra Pradesh, India"
+    }, {
+      "type": "Home Address",
+      "street": "5-1-4/123, D R COLONY",
+      "state": "Andhra Pradesh, India"
+    }]
+  }, {
+    "name": "Swetha",
+    "image": "http://atozprofile.com/public/generic_upload/family/313985000Swetha.png",
+    "addresses": [{
+      "type": "Personal Address",
+      "street": "5-1-4/123, D R COLONY",
+      "state": "Andhra Pradesh, India"
+    }, {
+      "type": "Office Address",
+      "street": "5-1-4/123, D R COLONY",
+      "state": "Andhra Pradesh, India"
+    }, {
+      "type": "Home Address",
+      "street": "5-1-4/123, D R COLONY",
+      "state": "Andhra Pradesh, India"
+    }]
+  },
+  {
+    "name": "Bharagav",
+    "image": "http://atozprofile.com/public/user_upload/profile/1843663324Self.png",
+    "addresses": [{
+      "type": "Personal Address",
+      "street": "5-1-4/123, D R COLONY",
+      "state": "Andhra Pradesh, India"
+    }, {
+      "type": "Office Address",
+      "street": "5-1-4/123, D R COLONY",
+      "state": "Andhra Pradesh, India"
+    }, {
+      "type": "Home Address",
+      "street": "5-1-4/123, D R COLONY",
+      "state": "Andhra Pradesh, India"
+    }]
+  }, {
+    "name": "Aarushi",
+    "image": "http://atozprofile.com/public/generic_upload/family/375460906Aarushi.png",
+    "addresses": [{
+      "type": "Personal Address",
+      "street": "5-1-4/123, D R COLONY",
+      "state": "Andhra Pradesh, India"
+    }, {
+      "type": "Office Address",
+      "street": "5-1-4/123, D R COLONY",
+      "state": "Andhra Pradesh, India"
+    }, {
+      "type": "Home Address",
+      "street": "5-1-4/123, D R COLONY",
+      "state": "Andhra Pradesh, India"
+    }]
+  }, {
+    "name": "Swetha",
+    "image": "http://atozprofile.com/public/generic_upload/family/313985000Swetha.png",
+    "addresses": [{
+      "type": "Personal Address",
+      "street": "5-1-4/123, D R COLONY",
+      "state": "Andhra Pradesh, India"
+    }, {
+      "type": "Office Address",
+      "street": "5-1-4/123, D R COLONY",
+      "state": "Andhra Pradesh, India"
+    }, {
+      "type": "Home Address",
+      "street": "5-1-4/123, D R COLONY",
+      "state": "Andhra Pradesh, India"
+    }]
+  }
+]

@@ -9,193 +9,7 @@ import {
 import { map, startWith } from 'rxjs/operators';
 import { MatPaginator, MatTableDataSource, MatSort } from '@angular/material';
 import { MainLoaderService } from './../../main-loader.service';
-
-const ELEMENT_DATA = [
-  {
-    name: 'Bharagav',
-    image:
-      'http://atozprofile.com/public/user_upload/profile/1843663324Self.png',
-    addresses: [
-      {
-        type: 'Personal Address',
-        street: '5-1-4/123, D R COLONY',
-        state: 'Andhra Pradesh, India'
-      },
-      {
-        type: 'Office Address',
-        street: '12213, Banglore',
-        state: 'India'
-      },
-      {
-        type: 'Temporary Address',
-        street: 'b-101, sector 5',
-        state: 'Noida'
-      },
-      {
-        type: 'Personal Address',
-        street: '5-1-4/123, D R COLONY',
-        state: 'Andhra Pradesh, India'
-      },
-      {
-        type: 'Office Address',
-        street: '12213, Banglore',
-        state: 'India'
-      },
-      {
-        type: 'Temporary Address',
-        street: 'b-101, sector 5',
-        state: 'Noida'
-      }
-    ]
-  },
-  {
-    name: 'Junje Gowd  Konappapalyam Chinna',
-    image:
-      'http://atozprofile.com/public/generic_upload/family/1559144679Lokesh.png',
-    addresses: [
-      {
-        type: 'Personal Address',
-        street: '5-1-4/123, D R COLONY',
-        state: 'Andhra Pradesh, India'
-      },
-      {
-        type: 'Office Address',
-        street: '12213, Banglore',
-        state: 'India'
-      },
-      {
-        type: 'Temporary Address',
-        street: 'b-101, sector 5',
-        state: 'Noida'
-      },
-      {
-        type: 'Personal Address',
-        street: '5-1-4/123, D R COLONY',
-        state: 'Andhra Pradesh, India'
-      },
-      {
-        type: 'Office Address',
-        street: '12213, Banglore',
-        state: 'India'
-      },
-      {
-        type: 'Temporary Address',
-        street: 'b-101, sector 5',
-        state: 'Noida'
-      }
-    ]
-  },
-  {
-    name: 'Pavan Kumar  Konappapalyam',
-    image:
-      'http://atozprofile.com/public/generic_upload/family/1690440524Pavan.png',
-    addresses: [
-      {
-        type: 'Personal Address',
-        street: '5-1-4/123, D R COLONY',
-        state: 'Andhra Pradesh, India'
-      },
-      {
-        type: 'Office Address',
-        street: '12213, Banglore',
-        state: 'India'
-      },
-      {
-        type: 'Temporary Address',
-        street: 'b-101, sector 5',
-        state: 'Noida'
-      }
-    ]
-  },
-  {
-    name: 'Chitra  Ranganath',
-    image:
-      'http://atozprofile.com/public/generic_upload/family/1682696996Chitra.png',
-    addresses: [
-      {
-        type: 'Personal Address',
-        street: '5-1-4/123, D R COLONY',
-        state: 'Andhra Pradesh, India'
-      },
-      {
-        type: 'Office Address',
-        street: '12213, Banglore',
-        state: 'India'
-      },
-      {
-        type: 'Temporary Address',
-        street: 'b-101, sector 5',
-        state: 'Noida'
-      }
-    ]
-  },
-  {
-    name: 'Hemalatha  V.N',
-    image:
-      'http://atozprofile.com/public/generic_upload/family/1936566325Hema.png',
-    addresses: [
-      {
-        type: 'Personal Address',
-        street: '5-1-4/123, D R COLONY',
-        state: 'Andhra Pradesh, India'
-      },
-      {
-        type: 'Office Address',
-        street: '12213, Banglore',
-        state: 'India'
-      },
-      {
-        type: 'Temporary Address',
-        street: 'b-101, sector 5',
-        state: 'Noida'
-      }
-    ]
-  },
-  {
-    name: 'Swetha  Lokesh',
-    image:
-      'http://atozprofile.com/public/generic_upload/family/313985000Swetha.png',
-    addresses: [
-      {
-        type: 'Personal Address',
-        street: '5-1-4/123, D R COLONY',
-        state: 'Andhra Pradesh, India'
-      },
-      {
-        type: 'Office Address',
-        street: '12213, Banglore',
-        state: 'India'
-      },
-      {
-        type: 'Temporary Address',
-        street: 'b-101, sector 5',
-        state: 'Noida'
-      }
-    ]
-  },
-  {
-    name: 'Aarushi  Alappagari',
-    image:
-      'http://atozprofile.com/public/generic_upload/family/375460906Aarushi.png',
-    addresses: [
-      {
-        type: 'Personal Address',
-        street: '5-1-4/123, D R COLONY',
-        state: 'Andhra Pradesh, India'
-      },
-      {
-        type: 'Office Address',
-        street: '12213, Banglore',
-        state: 'India'
-      },
-      {
-        type: 'Temporary Address',
-        street: 'b-101, sector 5',
-        state: 'Noida'
-      }
-    ]
-  }
-];
+import { RemoteService } from '../../../app/remote.service';
 
 @Component({
   selector: 'app-address',
@@ -265,10 +79,9 @@ export class AddressComponent implements OnInit {
   // });
   options: string[] = ['Home Address', 'Office Address', 'Native Town Address'];
   filteredOptions: Observable<string[]>;
-
-  dataSource = ELEMENT_DATA;
-
+  dataSource;
   constructor(
+    private remoteService: RemoteService,
     private fb: FormBuilder,
     private loaderService: MainLoaderService
   ) { }
@@ -281,6 +94,11 @@ export class AddressComponent implements OnInit {
       startWith(''),
       map(value => this._filter(value))
     );
+    this.remoteService.getCall('/addresses')
+      .subscribe((data) => {
+        debugger;
+        this.dataSource = data;
+      });
   }
 
   private _filter(value: string): string[] {
